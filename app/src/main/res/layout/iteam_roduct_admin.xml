@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_margin="8dp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="320dp"
+        app:cardCornerRadius="6dp"
+        android:backgroundTint="#DDDDDD"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textColor="#9C27B0"
+                android:text="Cập nhập SP"
+                android:id="@+id/tv_capnhap"
+                android:layout_gravity="right"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="10dp"
+                >
+                <com.makeramen.roundedimageview.RoundedImageView
+                    android:layout_width="380dp"
+                    android:layout_height="180dp"
+                    android:id="@+id/image_admin"
+                    android:backgroundTint="@color/black"
+                    app:riv_corner_radius="6dp"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Tieu de"
+                android:layout_marginLeft="10dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                android:layout_marginRight="15dp"
+                android:id="@+id/tv_title_admin"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="20dp"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="$: "
+                    android:layout_marginLeft="20dp"
+                    android:textColor="#CD2E2E"
+                    android:textSize="14dp"
+                    />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="399.000"
+                    android:textColor="#CD2E2E"
+                    android:textSize="14dp"
+                    android:id="@+id/tv_price_admin"
+                    />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Số lượng: "
+                    android:textColor="#6E6C6C"
+                    android:textSize="14dp"
+                    android:layout_marginLeft="15dp"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_soluong_admin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200"
+                    android:textColor="#6E6C6C"
+                    android:textSize="14dp" />
+            </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Xem đánh giá sản phẩm"
+                android:layout_marginLeft="20dp"
+                android:id="@+id/tv_binhluan_admin"
+                />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:orientation="horizontal"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible"
+                    android:id="@+id/tv_size_admin"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible"
+                    android:id="@+id/tv_mota_admin"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible"
+                    android:id="@+id/tv_phongcach_admin"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible"
+                    android:id="@+id/tv_id_admin"/>
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

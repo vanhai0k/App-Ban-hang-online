@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context=".Comment_Product">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:src="@drawable/ic_close"
+        android:id="@+id/img_close"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
+        android:layout_gravity="end"
+        android:layout_marginRight="15dp"
+        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rcv_comment"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center"
+        >
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/ed_idpro"
+            android:hint="id product"
+            android:visibility="invisible"
+            />
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:id="@+id/ed_iduser"
+            android:hint="id user"
+            android:visibility="invisible"
+            />
+    </LinearLayout>
+
+
+</LinearLayout>
