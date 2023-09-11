@@ -93,6 +93,7 @@ public class Product_Fragment extends Fragment {
                         product.setPhongcach(jsonObject.getString("phongcach"));
                         product.setSize(jsonObject.getString("size"));
 
+
                         list.add(product);
                     }
                     adapter = new ProducrAdapter(list,getContext());

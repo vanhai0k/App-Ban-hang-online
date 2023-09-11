@@ -81,6 +81,7 @@ public class ProducrAdapter extends RecyclerView.Adapter<ProducrAdapter.ProductV
         Intent intent = new Intent(context, Infomation_Pro.class);
         Bundle bundle = new Bundle();
 
+        bundle.putString("id_pro", product.get_id());
         bundle.putString("title", product.getTitle());
         bundle.putString("image", product.getImage());
         bundle.putString("infomation", product.getInfomation());

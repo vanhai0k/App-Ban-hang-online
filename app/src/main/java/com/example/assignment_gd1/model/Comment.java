@@ -16,6 +16,8 @@ public class Comment {
         this.id_product = id_product;
     }
 
+
+
     public Comment(String id, String username, String comment, String title, String id_user, String id_product) {
         this.id = id;
         this.username = username;
@@ -23,6 +25,17 @@ public class Comment {
         this.title = title;
         this.id_user = id_user;
         this.id_product = id_product;
+    }
+
+    public Comment(String id, String comment, String id_user, String id_product) {
+        this.id = id;
+        this.comment = comment;
+        this.id_user = id_user;
+        this.id_product = id_product;
+    }
+
+    public Comment(String comment) {
+        this.comment = comment;
     }
 
     public Comment() {

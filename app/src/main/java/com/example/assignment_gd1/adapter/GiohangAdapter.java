@@ -45,6 +45,7 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.GiohangV
     public void onBindViewHolder(@NonNull GiohangViewHolder holder, int position) {
         GioHang gioHang = list.get(position);
 
+        holder.idgiohang.setText(gioHang.getId());
         holder.tv_title.setText(gioHang.getTitle());
         holder.tvsoluong.setText(gioHang.getQuantity()+"");
         holder.tv_price.setText(gioHang.getPricegh()+""+ "VNĐ" + "/sản phẩm");
@@ -59,6 +60,7 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.GiohangV
             @Override
             public void onClick(View v) {
                 String id = gioHang.getId();
+//                Toast.makeText(context, "id_giohang"+ gioHang.getId(), Toast.LENGTH_SHORT).show();
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setTitle("Thông báo");
                 builder.setMessage("Bạn có muốn xóa sản phẩm này khỏi giỏ hàng?");
@@ -103,7 +105,7 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.GiohangV
 
     public static class GiohangViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tv_title,tv_price,tvsoluong,tv_thanhtien,tv_ngay,image_delete;
+        TextView tv_title,tv_price,tvsoluong,tv_thanhtien,tv_ngay,image_delete,idgiohang;
         ImageView image;
 
         public GiohangViewHolder(@NonNull View itemView) {
@@ -116,6 +118,7 @@ public class GiohangAdapter extends RecyclerView.Adapter<GiohangAdapter.GiohangV
             image = itemView.findViewById(R.id.img_giohang);
             image_delete = itemView.findViewById(R.id.image_delete);
             tv_ngay = itemView.findViewById(R.id.tv_ngay);
+            idgiohang = itemView.findViewById(R.id.idgiohang);
         }
     }
 }

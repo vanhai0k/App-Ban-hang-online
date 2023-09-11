@@ -20,7 +20,7 @@ public interface CommentDelete {
     Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyy").create();
 
     CommentDelete commentDelete = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.8:3000/api/")
+            .baseUrl("http://192.168.1.11:3000/api/")
 //            .baseUrl("http://10.24.45.15:3000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

@@ -14,39 +14,40 @@
         android:layout_marginTop="10dp"
         android:text="Cap nhap Comment"
         />
-<LinearLayout
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:orientation="horizontal">
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/ed_idp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/ed_idu"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/ed_idtt"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
-    <EditText
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:id="@+id/ed_idname"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        />
-</LinearLayout>
+
+    <LinearLayout
+        android:layout_width="8dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/ed_idp"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/ed_idu"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/ed_idtt"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+
+        <EditText
+            android:id="@+id/ed_idname"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp" />
+    </LinearLayout>
 
     <EditText
         android:layout_width="300dp"

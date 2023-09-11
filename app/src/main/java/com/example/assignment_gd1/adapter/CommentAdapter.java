@@ -72,21 +72,23 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
 
         SharedPreferences sharedPreferences = context.getSharedPreferences("luuduser", context.MODE_PRIVATE);
         String curid = sharedPreferences.getString("idusers", null);
-        if (comment.getId_user().equalsIgnoreCase(curid)){
+        String id_comment = comment.getId_user();
+        if (id_comment.equals(curid)){
             holder.image_edit.setVisibility(View.VISIBLE);
         }else{
             holder.image_edit.setVisibility(View.INVISIBLE);
         }
-        if (comment.getId_user().equalsIgnoreCase(curid)){
+        if (comment.getId_user().equals(curid)){
             holder.image_delete.setVisibility(View.VISIBLE);
         }else{
             holder.image_delete.setVisibility(View.INVISIBLE);
         }
 
-        String id = comment.getId();
+
         holder.image_delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String id = comment.getId();
                 AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setTitle("Thong bao!!!!!");
                 builder.setMessage("Ban muon xoa binh luan nay!!!!!");
@@ -150,21 +152,22 @@ public class CommentAdapter extends RecyclerView.Adapter<CommentAdapter.CommentV
                 ed_idu.setText(comment.getId_user());
                 ed_idtt.setText(comment.getTitle());
                 ed_idname.setText(comment.getUsername());
+//                Toast.makeText(context, "idcomment"+ idcm, Toast.LENGTH_SHORT).show();
 
                 btn_capnhap.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        String comment = ed_comment.getText().toString().trim();
+                        String commentpro = ed_comment.getText().toString().trim();
                         String idu = ed_idu.getText().toString().trim();
                         String idp = ed_idp.getText().toString().trim();
                         String idtt = ed_idtt.getText().toString().trim();
                         String name = ed_idname.getText().toString().trim();
 
 
-                        CommentService.commentService.updateComment(idcm, new Comment(name,comment,idtt,idu,idp)).enqueue(new Callback<Comment>() {
+                        CommentService.commentService.updateComment(idcm, new Comment(commentpro)).enqueue(new Callback<Comment>() {
                             @Override
                             public void onResponse(Call<Comment> call, Response<Comment> response) {
-                                list.set(holder.getAdapterPosition(), new Comment(idcm,name,comment,idtt,idu,idp));
+                                list.set(holder.getAdapterPosition(), new Comment(idcm,commentpro));
                                 notifyDataSetChanged();
                                 dialog.dismiss();
                             }

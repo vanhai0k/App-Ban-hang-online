@@ -103,28 +103,6 @@ public class Test_Comment extends AppCompatActivity {
             }
         });
         requestQueue.add(jsonObjectRequest);
-//        CommentService.commentService.getCommentsByComicId(productId).enqueue(new Callback<ApiResponse<List<Comment>>>() {
-//            @Override
-//            public void onResponse(Call<ApiResponse<List<Comment>>> call, Response<ApiResponse<List<Comment>>> response) {
-//                if (response.isSuccessful()) {
-//                    ApiResponse<List<Comment>> apiResponse = response.body();
-//                    if (apiResponse != null && apiResponse.getStatus() == 1) {
-//                        List<Comment> comments = apiResponse.getData();
-//                        adminAdapter.setCommentList(comments);
-//                        rcv.setAdapter(adminAdapter);
-//                    } else {
-//                        Log.e(TAG, "API response error: " + apiResponse.getMsg());
-//                    }
-//                } else {
-//                    Log.e(TAG, "API request failed. Code: " + response.code());
-//                }
-//            }
-//
-//            @Override
-//            public void onFailure(Call<ApiResponse<List<Comment>>> call, Throwable t) {
-//
-//            }
-//        });
 
     }
 }

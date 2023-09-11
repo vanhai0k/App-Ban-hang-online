@@ -8,15 +8,16 @@
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
-        android:layout_height="290dp"
+        android:layout_height="match_parent"
         app:cardCornerRadius="6dp"
         android:backgroundTint="#DDDDDD"
         >
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
+
             >
             <LinearLayout
                 android:layout_width="match_parent"
@@ -89,38 +90,42 @@
                 android:text="Xem đánh giá sản phẩm"
                 android:layout_marginLeft="20dp"
                 android:id="@+id/tv_binhluan"
+                android:layout_marginBottom="10dp"
                 />
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="10dp"
-    android:orientation="horizontal"
-    >
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="invisible"
-        android:id="@+id/tv_size"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="invisible"
-        android:id="@+id/tv_mota"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="invisible"
-        android:id="@+id/tv_phongcach"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        android:visibility="invisible"
-        android:id="@+id/tv_id"/>
-</LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_size"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_mota"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_phongcach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible" />
+
+                <TextView
+                    android:id="@+id/tv_id"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
         </LinearLayout>
 
 

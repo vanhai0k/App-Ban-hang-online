@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ import retrofit2.Callback;
 public class Infomation_Pro extends AppCompatActivity {
 
 
-    TextView tv_title,tv_mota,tv_price,tv_soluong,tv_binhluansanpham,tv_idtest,
+    TextView tv_title,tv_mota,tv_price,tv_soluong,tv_binhluansanpham,tv_idtest,tv_idpro,iduser,
             tv_phongcach,tv_size,tv_soluongmua,tv_thanhtien,tv_linkanh,tvtt,tvttt;
     Button btn_themgiohang,btn_muasp;
     ImageView image,im_quaylai,img_tru,img_cong,im_vaogiohang;
@@ -82,6 +83,7 @@ public class Infomation_Pro extends AppCompatActivity {
             return;
         }
 
+        tv_idpro.setText(bundle.getString("id_pro"));
         tv_title.setText(bundle.getString("title"));
         tv_mota.setText(bundle.getString("infomation"));
         tv_phongcach.setText(bundle.getString("phongcach"));
@@ -94,6 +96,10 @@ public class Infomation_Pro extends AppCompatActivity {
         Glide.with(getBaseContext())
                 .load(bundle.getString("image").toString())
                 .into(image);
+
+        SharedPreferences sharedPreferences = getSharedPreferences("luuduser", MODE_PRIVATE);
+        String curid = sharedPreferences.getString("idusers", null);
+        iduser.setText(curid);
 
 
         Intent intent = getIntent();
@@ -152,6 +158,8 @@ public class Infomation_Pro extends AppCompatActivity {
 
     private void anhxa() {
         tv_title = findViewById(R.id.tv_title);
+        tv_idpro = findViewById(R.id.tv_id);
+        iduser = findViewById(R.id.iduser);
         tv_mota = findViewById(R.id.tv_mota);
         tv_price = findViewById(R.id.tv_price);
         tv_soluong = findViewById(R.id.tv_soluong);
@@ -226,6 +234,8 @@ public class Infomation_Pro extends AppCompatActivity {
             object.put("quantity", tv_soluongmua.getText().toString().trim());
             object.put("pricegh", tv_price.getText().toString().trim());
             object.put("thanhtien", tv_thanhtien.getText().toString());
+            object.put("id_product", tv_idpro.getText().toString());
+            object.put("id_user", iduser.getText().toString());
 
             JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.POST, API.API_PostGiohang, object,
                     new Response.Listener<JSONObject>() {
@@ -238,7 +248,7 @@ public class Infomation_Pro extends AppCompatActivity {
                 @Override
                 public void onErrorResponse(VolleyError error) {
                     Toast.makeText(getBaseContext(), "Fail", Toast.LENGTH_SHORT).show();
-
+                    progressDialog.dismiss();
                 }
             });
             requestQueue.add(objectRequest);

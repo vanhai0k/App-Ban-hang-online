@@ -16,13 +16,14 @@
             >
             <ImageView
                 android:layout_width="150dp"
-                android:layout_height="120dp"
+                android:layout_height="140dp"
                 android:id="@+id/img_giohang"
                 android:src="@drawable/boanh"
+                android:layout_gravity="center"
                 />
         </LinearLayout>
         <LinearLayout
-            android:layout_width="210dp"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_marginLeft="10dp"
@@ -85,14 +86,20 @@
                 android:id="@+id/tv_thanhtien"
                 android:textColor="#C13535"
                 />
+
             <TextView
-                android:layout_marginTop="10dp"
+                android:id="@+id/tv_ngay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/tv_ngay"
-                android:textColor="#A6A4A4"
-                />
+                android:layout_marginTop="10dp"
+                android:textColor="#A6A4A4" />
 
+            <TextView
+                android:id="@+id/idgiohang"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:text="id"
+                android:textColor="@color/black" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
