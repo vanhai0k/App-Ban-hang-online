@@ -25,7 +25,7 @@ public interface Api_User {
     Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyy").create();
 
     Api_User apiUser = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.11:3000/api/")
+            .baseUrl("http://192.168.1.6:3000/api/")
 //            .baseUrl("http://10.24.29.207:3000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

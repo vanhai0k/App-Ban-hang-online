@@ -28,13 +28,9 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sản phẩm: "
-                />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="ao tank"
                 android:id="@+id/tv_title_pro"
+                android:textColor="#516BFF"
                 />
         </LinearLayout>
         <TextView

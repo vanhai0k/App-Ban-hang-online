@@ -16,7 +16,7 @@ public interface Api_Giohang {
     Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyy").create();
 
     Api_Giohang apiGiohang = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.11:3000/api/")
+            .baseUrl("http://192.168.1.6:3000/api/")
 //            .baseUrl("http://10.24.45.15:3000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

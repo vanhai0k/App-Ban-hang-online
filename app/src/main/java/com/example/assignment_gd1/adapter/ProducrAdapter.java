@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -75,6 +76,15 @@ public class ProducrAdapter extends RecyclerView.Adapter<ProducrAdapter.ProductV
 
             }
         });
+        holder.danhgia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+//                Toast.makeText(context, "idUser"+ user.getId(), Toast.LENGTH_SHORT).show();
+                comMent(product);
+//                listener.onItemClick(product);
+
+            }
+        });
 
     }
     private void infomation(Product product){
@@ -117,6 +127,7 @@ public class ProducrAdapter extends RecyclerView.Adapter<ProducrAdapter.ProductV
         TextView tv_title,tv_quantity,tv_price,tv_mota,
                 tv_phongcach,tv_size,tv_id,tv_binhluan;
         ImageView image;
+        LinearLayout danhgia;
 
         public ProductViewholder(@NonNull View itemView) {
             super(itemView);
@@ -130,6 +141,7 @@ public class ProducrAdapter extends RecyclerView.Adapter<ProducrAdapter.ProductV
             tv_size = itemView.findViewById(R.id.tv_size);
             tv_id = itemView.findViewById(R.id.tv_id);
             tv_binhluan = itemView.findViewById(R.id.tv_binhluan);
+            danhgia = itemView.findViewById(R.id.danhgia);
 
 
         }

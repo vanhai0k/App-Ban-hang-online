@@ -106,7 +106,7 @@ public class Comment_Product extends AppCompatActivity {
             return false;
         }
         if (comment.isEmpty()){
-            showMessage("Please enter comment");
+            showMessage("Hãy viết dánh giá của bạn");
             return false;
         }
         return true;
@@ -116,6 +116,7 @@ public class Comment_Product extends AppCompatActivity {
     }
     private void addComment() {
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        String comment = ed_comment.getText().toString().trim();
         try {
             JSONObject jsonObject = new JSONObject();
             jsonObject.put("id_product",ed_idpro.getText().toString().trim());
