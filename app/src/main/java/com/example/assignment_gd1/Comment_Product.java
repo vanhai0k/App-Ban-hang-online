@@ -1,16 +1,23 @@
 package com.example.assignment_gd1;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -92,7 +99,7 @@ public class Comment_Product extends AppCompatActivity {
 
                 String id_user = ed_iduser.getText().toString().trim();
                 String comment = ed_comment.getText().toString().trim();
-                if (isValied(id_user,comment)){
+                if (isValied(id_user,comment,v)){
                     addComment();
 
                 }
@@ -100,13 +107,14 @@ public class Comment_Product extends AppCompatActivity {
         });
 
     }
-    private boolean isValied(String id_user, String comment) {
+    private boolean isValied(String id_user, String comment, View v) {
         if (id_user.isEmpty()){
             showMessage("Please enter user id_user");
             return false;
         }
         if (comment.isEmpty()){
-            showMessage("Hãy viết dánh giá của bạn");
+//            showMessage("Hãy viết dánh giá của bạn");
+            showThongbao(v);
             return false;
         }
         return true;
@@ -193,6 +201,32 @@ public class Comment_Product extends AppCompatActivity {
             }
         });
         requestQueue.add(jsonObjectRequest);
+    }
+
+    private void showThongbao (View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+        View view = LayoutInflater.from(getBaseContext()).inflate(R.layout.dialog_thongbao,null);
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+
+        ImageView close = view.findViewById(R.id.close);
+        TextView tvtext = view.findViewById(R.id.tvtext);
+        tvtext.setText("Hãy viết đánh giá của bạn!!!");
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+            }
+        }, 2000);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
     }
 
 }

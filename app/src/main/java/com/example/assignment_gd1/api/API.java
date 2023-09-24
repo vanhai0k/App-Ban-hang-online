@@ -1,24 +1,26 @@
 package com.example.assignment_gd1.api;
 
 public class API {
-    String url = "http://localhost:3000/api/users";
-    public static final String API_GET ="http://192.168.1.6:3000/api/users";
-//    public static final String API_GET ="http://10.24.45.15:3000/api/users";
-    public static final String API_POST ="http://192.168.1.6:3000/api/users";
+    public static final String url = "http://192.168.1.7:3000/api/";
+    public static final String API_GET = url+"/users";
+    public static final String API_POST =url+"/users";
 
-    public static final String API_GETUser ="http://192.168.1.6:3000/api/user";
-    public static final String API_PostUser ="http://192.168.1.6:3000/api/user";
-    public static final String API_DeleteUser ="http://192.168.1.6:3000/api/user/delete/";
+    public static final String API_GETUser =url+"/user";
+    public static final String API_PostUser =url+"/user";
+    public static final String API_DeleteUser =url+"/delete/";
 
-    public static final String API_GetComment ="http://192.168.1.6:3000/api/comment?id_product=";
-    public static final String API_PostComment ="http://192.168.1.6:3000/api/comment";
+    public static final String API_GetComment =url+"/comment?id_product=";
+    public static final String API_PostComment =url+"/comment";
 
     // gio hang
-    public static final String API_PostGiohang ="http://192.168.1.6:3000/api/giohang";
+    public static final String API_PostGiohang =url+"/giohang";
 
 
     // mua san pham
-    public static final String API_Get_Comment ="http://192.168.1.6:3000/api/comment?id_product=";
+    public static final String API_Get_Comment =url+"/comment?id_product=";
 
-    public static final String API_Get_Commentgiohang1pro ="http://192.168.1.6:3000/api/giohang?id_user=";
+    public static final String API_Get_Commentgiohang1pro =url+"/giohang?id_user=";
+
+    public static final String API_Get_Message =url+"/message?id_user=";
+    public static final String API_Send_Message =url+"/message";
 }

@@ -91,14 +91,18 @@
                         android:layout_marginLeft="15dp"
                         />
 
-                    <TextView
+                    <EditText
                         android:id="@+id/tv_soluongmua"
                         android:layout_width="30dp"
                         android:layout_height="24dp"
                         android:gravity="center"
+                        android:inputType="number"
+                        android:imeOptions="actionDone"
                         android:text="0"
+                        android:minEms="0"
+                        android:background="@android:color/transparent"
                         android:layout_gravity="center"
-                        android:textSize="22dp" />
+                        android:textSize="20dp" />
                     <ImageView
                         android:layout_width="wrap_content"
                         android:layout_height="20dp"
@@ -126,24 +130,36 @@
                         >
                         <RadioButton
                             android:id="@+id/rdos"
-                            android:layout_width="44dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
                             android:text="S"
-                            android:textSize="20dp"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="10dp"
+                            android:button="@drawable/custom_checkbox"
+                            android:gravity="center"
+                            android:background="#EAEAEA"
                             />
                         <RadioButton
                             android:id="@+id/rdol"
-                            android:layout_width="44dp"
-                            android:layout_height="wrap_content"
+                            android:layout_width="wrap_content"
+                            android:layout_height="26dp"
                             android:text="L"
-                            android:textSize="20dp"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="8dp"
+                            android:button="@drawable/custom_checkbox"
+                            android:gravity="center"
+                            android:background="#EAEAEA"
                             />
                         <RadioButton
                             android:id="@+id/rdoxl"
                             android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_height="26dp"
                             android:text="XL"
-                            android:textSize="20dp"
+                            android:textSize="15sp"
+                            android:layout_marginLeft="8dp"
+                            android:button="@drawable/custom_checkbox"
+                            android:gravity="center"
+                            android:background="#EAEAEA"
                             />
                     </RadioGroup>
 
@@ -291,7 +307,7 @@
         </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="150dp"
+            android:layout_height="200dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
             android:layout_marginTop="15dp"
@@ -337,27 +353,38 @@
             />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
                 android:layout_gravity="center|bottom"
-                android:layout_marginTop="5dp"
                 >
-
+                <Button
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.4"
+                    android:text="Chát"
+                    android:layout_marginBottom="-8dp"
+                    android:backgroundTint="#03A9F4"
+                    android:id="@+id/btn_chat"
+                    android:layout_gravity="bottom"
+                    />
                     <Button
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
                         android:text="Them vao gio hang"
+                        android:layout_weight="0.5"
                         android:backgroundTint="#F37E7E"
                         android:id="@+id/btn_themgiohang"
                         android:layout_gravity="bottom"
                         />
                 <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="0dp"
+                    android:layout_weight="0.5"
+                    android:layout_height="60dp"
                     android:text="Mua San pham"
                     android:layout_gravity="bottom"
                     android:id="@+id/btn_muasp"
+                    android:backgroundTint="#E91E63"
                     />
 
             </LinearLayout>

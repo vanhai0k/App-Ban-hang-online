@@ -64,7 +64,7 @@ public class Product_Fragment extends Fragment {
             Glide.with(getContext())
                     .load(image)
                     .into(im_imageuser);
-            Log.i("id_pragment", id);
+//            Log.i("id_pragment", id);
         }
 
 

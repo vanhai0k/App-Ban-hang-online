@@ -2,15 +2,25 @@ package com.example.assignment_gd1;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
@@ -27,6 +37,7 @@ import com.bumptech.glide.Glide;
 import com.example.assignment_gd1.api.API;
 import com.example.assignment_gd1.api.Api_SPmua;
 import com.example.assignment_gd1.fragment.Giohang_Fragment;
+import com.example.assignment_gd1.fragment.Product_Fragment;
 import com.example.assignment_gd1.model.GioHang;
 import com.example.assignment_gd1.model.Product;
 import com.example.assignment_gd1.model.ReceSpMua;
@@ -42,8 +53,9 @@ public class Infomation_Pro extends AppCompatActivity {
 
 
     TextView tv_title,tv_mota,tv_price,tv_soluong,tv_binhluansanpham,tv_idtest,tv_idpro,iduser,
-            tv_phongcach,tv_size,tv_soluongmua,tv_thanhtien,tv_linkanh,tvtt,tvttt;
-    Button btn_themgiohang,btn_muasp;
+            tv_phongcach,tv_size,tv_thanhtien,tv_linkanh,tvtt,tvttt;
+    EditText tv_soluongmua;
+    Button btn_themgiohang,btn_muasp,btn_chat;
     ImageView image,im_quaylai,img_tru,img_cong,im_vaogiohang;
     ProgressDialog progressDialog;
     RadioButton rdos,rdol,rdoxl;
@@ -60,12 +72,25 @@ public class Infomation_Pro extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addGiohang();
+                showThongbao(v);
             }
         });
         btn_muasp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 muaSanPham();
+            }
+        });
+        tv_soluongmua.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                if (actionId == EditorInfo.IME_ACTION_DONE) {
+                    tv_soluongmua.clearFocus();
+                    InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(tv_soluongmua.getWindowToken(), 0);
+                    return true;
+                }
+                return false;
             }
         });
 
@@ -127,13 +152,24 @@ public class Infomation_Pro extends AppCompatActivity {
         img_cong.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                count++;
+//                count++;
+//                tv_thanhtien.setVisibility(View.VISIBLE);
+//                tvttt.setVisibility(View.VISIBLE);
+//                tvtt.setVisibility(View.VISIBLE);
+//                // Cập nhật văn bản của TextView
+//                tv_soluongmua.setText(String.valueOf(count));
+//                tv_thanhtien.setText(String.valueOf(price_giohang*count) );
+
+
+                tv_soluongmua.setText(String.valueOf(count + 1));
+                count = Integer.parseInt(tv_soluongmua.getText().toString());
                 tv_thanhtien.setVisibility(View.VISIBLE);
                 tvttt.setVisibility(View.VISIBLE);
                 tvtt.setVisibility(View.VISIBLE);
                 // Cập nhật văn bản của TextView
-                tv_soluongmua.setText(String.valueOf(count));
+//                tv_soluongmua.setText(String.valueOf(currentValue));
                 tv_thanhtien.setText(String.valueOf(price_giohang*count) );
+
             }
         });
         img_tru.setOnClickListener(new View.OnClickListener() {
@@ -179,10 +215,48 @@ public class Infomation_Pro extends AppCompatActivity {
         tv_idtest = findViewById(R.id.tv_idtest);
         tvttt = findViewById(R.id.tvttt);
         tvtt = findViewById(R.id.tvtt);
+        btn_chat = findViewById(R.id.btn_chat);
 
         rdos = findViewById(R.id.rdos);
         rdol = findViewById(R.id.rdol);
         rdoxl = findViewById(R.id.rdoxl);
+
+        rdos.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_checkbox));
+                } else {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_canlecheckbox)); // Hình ảnh cho trạng thái chưa chọn
+                }
+            }
+        });
+        rdol.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_checkbox));
+                } else {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_canlecheckbox)); // Hình ảnh cho trạng thái chưa chọn
+                }
+            }
+        });
+        rdoxl.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if (isChecked) {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_checkbox));
+                } else {
+                    buttonView.setBackground(ContextCompat.getDrawable(getApplicationContext(), R.drawable.custom_canlecheckbox)); // Hình ảnh cho trạng thái chưa chọn
+                }
+            }
+        });
+        btn_chat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getBaseContext(),Tuvan_activity.class));
+            }
+        });
     }
     private void muaSanPham(){
         progressDialog.show();
@@ -242,7 +316,7 @@ public class Infomation_Pro extends AppCompatActivity {
                         @Override
                         public void onResponse(JSONObject response) {
                             progressDialog.dismiss();
-                            Toast.makeText(getBaseContext(), "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+//                            Toast.makeText(getBaseContext(), "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
                         }
                     }, new Response.ErrorListener() {
                 @Override
@@ -257,5 +331,29 @@ public class Infomation_Pro extends AppCompatActivity {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    private void showThongbao (View v){
+        AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+        View view = LayoutInflater.from(getBaseContext()).inflate(R.layout.dialog_thongbao,null);
+        builder.setView(view);
+        AlertDialog dialog = builder.create();
+
+        ImageView close = view.findViewById(R.id.close);
+        close.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dialog.cancel();
+            }
+        });
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                dialog.dismiss();
+                startActivity(new Intent(getBaseContext(), Giaodien_Activity.class));
+            }
+        }, 2500);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
+        dialog.show();
     }
 }

@@ -1,5 +1,6 @@
 package com.example.assignment_gd1;
 
+import com.example.assignment_gd1.api.API;
 import com.example.assignment_gd1.api.Api_Product;
 import com.example.assignment_gd1.model.Comment;
 import com.example.assignment_gd1.model.Product;
@@ -25,7 +26,7 @@ public interface CommentService {
     Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyy").create();
 
     CommentService commentService = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.6:3000/api/")
+            .baseUrl(API.url)
 //            .baseUrl("http:/10.24.30.110:3000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

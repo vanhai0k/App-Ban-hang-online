@@ -49,7 +49,7 @@ public class Giaodien_Activity extends AppCompatActivity {
         bundle.putString("image", image);
         bundle.putString("phanquyen", phanquyen);
 
-        Log.i( "iduser: ", iduser);
+//        Log.i( "iduser: ", iduser);
 
         Product_Fragment productFragment = new Product_Fragment();
         productFragment.setArguments(bundle);

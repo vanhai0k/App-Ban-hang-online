@@ -21,7 +21,7 @@ public interface Api_SPmua {
     Gson gson = new GsonBuilder().setDateFormat("dd-MM-yyy").create();
 
     Api_SPmua apiSPmua = new Retrofit.Builder()
-            .baseUrl("http://192.168.1.6:3000/api/")
+            .baseUrl(API.url)
 //            .baseUrl("http://10.24.45.15:3000/api/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()

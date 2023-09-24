@@ -52,7 +52,7 @@ public class Giohang_Fragment extends Fragment {
         View view =inflater.inflate(R.layout.fragment_giohang_, container, false);
 
         rcv = view.findViewById(R.id.rcv);
-        iduser = view.findViewById(R.id.iduser);
+//        iduser = view.findViewById(R.id.iduser);
         LinearLayoutManager manager = new LinearLayoutManager(getContext());
         rcv.setLayoutManager(manager);
         DividerItemDecoration itemDecoration = new DividerItemDecoration(getContext(),DividerItemDecoration.VERTICAL);
