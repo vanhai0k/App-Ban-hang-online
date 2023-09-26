@@ -23,4 +23,6 @@ public class API {
 
     public static final String API_Get_Message =url+"/message?id_user=";
     public static final String API_Send_Message =url+"/message";
+
+    public static final String API_Tongtien = url+ "/sumprice";
 }
