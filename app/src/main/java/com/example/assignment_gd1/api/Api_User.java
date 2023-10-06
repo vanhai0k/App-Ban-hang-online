@@ -1,6 +1,8 @@
 package com.example.assignment_gd1.api;
 
 import com.example.assignment_gd1.Service.UserResponse;
+import com.example.assignment_gd1.model.LoginRequest;
+import com.example.assignment_gd1.model.LoginResponse;
 import com.example.assignment_gd1.model.ReceSpMua;
 import com.example.assignment_gd1.model.ReceUser;
 import com.example.assignment_gd1.model.User;
@@ -15,6 +17,7 @@ import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
+import retrofit2.http.POST;
 import retrofit2.http.PUT;
 import retrofit2.http.Path;
 import retrofit2.http.Query;
@@ -39,9 +42,12 @@ public interface Api_User {
     @PUT("user/update/{id}")
     Call<User> updateUser(@Path("id") String id, @Body User user);
 
+//    @POST("login")
     @GET("user")
     Call<UserResponse> login(
             @Query("username") String username,
             @Query("passwd") String passwd
     );
+    @POST("login")
+    Call<LoginResponse> loginToken(@Body LoginRequest request);
 }

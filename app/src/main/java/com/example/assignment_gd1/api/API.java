@@ -1,7 +1,7 @@
 package com.example.assignment_gd1.api;
 
 public class API {
-    public static final String url = "http://192.168.1.7:3000/api/";
+    public static final String url = "http://192.168.1.9:3000/api/";
     public static final String API_GET = url+"/users";
     public static final String API_POST =url+"/users";
 
@@ -25,4 +25,5 @@ public class API {
     public static final String API_Send_Message =url+"/message";
 
     public static final String API_Tongtien = url+ "/sumprice";
+    public static final String API_TongtienMonth = url+ "transaction/report";
 }

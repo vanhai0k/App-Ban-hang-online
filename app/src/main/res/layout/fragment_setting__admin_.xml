@@ -81,6 +81,9 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:layout_marginTop="40dp"
             >
             <TextView
                 android:layout_width="wrap_content"
@@ -89,7 +92,6 @@
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="Tổng tiền: "
-                android:layout_marginTop="30dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -99,7 +101,6 @@
                 android:id="@+id/tvthongke"
                 android:text="100k"
                 android:layout_marginLeft="20dp"
-                android:layout_marginTop="30dp"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -108,7 +109,137 @@
                 android:textColor="@color/black"
                 android:gravity="center"
                 android:text="VND"
-                android:layout_marginTop="30dp"
+                />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            >
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Start Day"
+                        android:gravity="center"
+                        android:textColor="#E16C46"
+                        android:layout_marginBottom="8dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                        <EditText
+                            android:id="@+id/startdate"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:hint=".../.../202."
+                            android:background="@android:color/transparent"
+                            android:gravity="center"
+                            android:layout_gravity="center"
+                            />
+                        <ImageView
+                            android:id="@+id/imDate"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@drawable/schedule"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal"
+                android:gravity="center"
+                >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+                    <TextView
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="End Day"
+                        android:gravity="center"
+                        android:textColor="#E16C46"
+                        android:layout_marginBottom="8dp"
+                        />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal"
+                        >
+                <EditText
+                    android:id="@+id/enddate"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:hint=".../.../202."
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    />
+                <ImageView
+                    android:id="@+id/imDateand"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/schedule"
+                    />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            >
+            <TextView
+                android:id="@+id/tv_tongtienDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="Tinh: "
+                android:background="#EFCFA0"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="#D13636"
+                android:id="@+id/tvthongkedate"
+                android:text=""
+                android:layout_marginLeft="20dp"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20dp"
+                android:textColor="@color/black"
+                android:gravity="center"
+                android:text="VND"
                 />
         </LinearLayout>
         <Button

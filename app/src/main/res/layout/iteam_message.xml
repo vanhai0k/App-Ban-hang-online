@@ -6,34 +6,7 @@
     android:padding="5dp"
     android:layout_height="wrap_content">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:orientation="horizontal"-->
-<!--        >-->
-<!--        <ImageView-->
-<!--            android:layout_width="50dp"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:src="@drawable/ic_tym"-->
-<!--            android:background="#C34D4D"-->
-<!--            />-->
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="50dp"-->
-<!--            android:background="@drawable/border"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            >-->
-<!--            <TextView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:padding="10dp"-->
-<!--                android:gravity="center"-->
-<!--                android:textSize="18dp"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:text="hai oi bao cai nay" />-->
-<!--        </LinearLayout>-->
-<!--    </LinearLayout>-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

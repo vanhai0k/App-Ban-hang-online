@@ -14,6 +14,8 @@ import android.widget.Toast;
 
 import com.example.assignment_gd1.Service.UserResponse;
 import com.example.assignment_gd1.api.Api_User;
+import com.example.assignment_gd1.model.LoginRequest;
+import com.example.assignment_gd1.model.LoginResponse;
 import com.example.assignment_gd1.model.ReceUser;
 import com.example.assignment_gd1.model.User;
 
