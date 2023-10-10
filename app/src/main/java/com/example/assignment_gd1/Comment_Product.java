@@ -78,6 +78,7 @@ public class Comment_Product extends AppCompatActivity {
         Bundle bundle = getIntent().getExtras();
 
         ed_idpro.setText(bundle.getString("_id"));
+
         SharedPreferences sharedPreferences = getSharedPreferences("luuduser", MODE_PRIVATE);
         String curid = sharedPreferences.getString("idusers", null);
         ed_iduser.setText(curid);

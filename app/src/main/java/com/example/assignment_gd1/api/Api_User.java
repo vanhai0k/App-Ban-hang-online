@@ -39,7 +39,7 @@ public interface Api_User {
     @DELETE("user/delete/{id}")
     Call<User> deleteUser(@Path("id") String id);
 
-    @PUT("user/update/{id}")
+    @PUT("user/updateUser/{id}")
     Call<User> updateUser(@Path("id") String id, @Body User user);
 
 //    @POST("login")

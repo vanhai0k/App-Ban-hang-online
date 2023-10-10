@@ -129,7 +129,7 @@ public class Setting_Admin_Fragment extends Fragment {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         // Xử lý khi người dùng chọn ngày
                         month++; // Tháng trong DatePickerDialog bắt đầu từ 0
-                        dateend = dayOfMonth + "/" + month + "/" + year;
+                        dateend = dayOfMonth +"/"+ month +"/"+ year;
                         enddate.setText(dateend);
                     }
                 },
@@ -151,7 +151,7 @@ public class Setting_Admin_Fragment extends Fragment {
                     public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
                         // Xử lý khi người dùng chọn ngày
                         month++; // Tháng trong DatePickerDialog bắt đầu từ 0
-                        datestart = dayOfMonth + "/" + month + "/" + year;
+                        datestart = dayOfMonth +"/"+ month +"/"+ year;
                         startdate.setText(datestart);
                     }
                 },

@@ -8,17 +8,57 @@ public class User implements Serializable {
     @SerializedName("_id")
     private String id;
     private String passwd,username,phanquyen,email,image;
+    private String phone,gioitinh,ngaysinh;
+
 
     public User() {
     }
 
-    public User(String id, String passwd, String username, String phanquyen, String email, String image) {
+    public User(String id, String passwd, String username, String phanquyen, String email, String image, String phone, String gioitinh, String ngaysinh) {
         this.id = id;
         this.passwd = passwd;
         this.username = username;
         this.phanquyen = phanquyen;
         this.email = email;
         this.image = image;
+        this.phone = phone;
+        this.gioitinh = gioitinh;
+        this.ngaysinh = ngaysinh;
+    }
+
+    public User(String passwd, String username, String phanquyen, String email, String image, String phone, String gioitinh, String ngaysinh) {
+        this.passwd = passwd;
+        this.username = username;
+        this.phanquyen = phanquyen;
+        this.email = email;
+        this.image = image;
+        this.phone = phone;
+        this.gioitinh = gioitinh;
+        this.ngaysinh = ngaysinh;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getGioitinh() {
+        return gioitinh;
+    }
+
+    public void setGioitinh(String gioitinh) {
+        this.gioitinh = gioitinh;
+    }
+
+    public String getNgaysinh() {
+        return ngaysinh;
+    }
+
+    public void setNgaysinh(String ngaysinh) {
+        this.ngaysinh = ngaysinh;
     }
 
     public String getId() {

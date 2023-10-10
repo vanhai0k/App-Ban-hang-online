@@ -99,6 +99,22 @@ public class fragment_login_tab extends Fragment {
             editor1.putString("idusers", mUser.getId());
             editor1.apply();
 
+            // gui qua Infomation_User
+            SharedPreferences preferences1 = getContext().getSharedPreferences("infoUser",Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor2 = preferences1.edit();
+            editor2.putString("iduser", mUser.getId());
+            editor2.putString("username", mUser.getUsername());
+            editor2.putString("email", mUser.getEmail());
+            editor2.putString("image", mUser.getImage());
+            editor2.putString("phone", mUser.getPhone());
+            editor2.putString("gioitinh", mUser.getGioitinh());
+            editor2.putString("ngaysinh", mUser.getNgaysinh());
+            editor2.putString("passwd", mUser.getPasswd());
+            editor2.putString("phanquyen", mUser.getPhanquyen());
+
+            editor2.apply();
+
+
                 if (mUser.getPhanquyen().equalsIgnoreCase("Admin")){
                     Intent i = new Intent(getContext(), GiaoDien_Admin_Activity.class);
 //                    dulieudn();

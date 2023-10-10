@@ -12,9 +12,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.assignment_gd1.Infomation_User;
 import com.example.assignment_gd1.MainActivity;
 import com.example.assignment_gd1.R;
 import com.example.assignment_gd1.api.Api_SPmua;
@@ -33,7 +35,7 @@ public class Setting_Fragment extends Fragment {
 
     SharedPreferences sharedPreferences;
     ImageView im_image;
-    private TextView tv_username_admin,tv_email_admin,tv_phanquyen,tv_thongke;
+    private TextView tv_username_admin,tv_email_admin,tv_phanquyen,infomationUser;
     String username,email;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -45,6 +47,7 @@ public class Setting_Fragment extends Fragment {
         tv_username_admin = view.findViewById(R.id.tv_username_admin);
         tv_phanquyen = view.findViewById(R.id.tv_phanquyen);
         im_image = view.findViewById(R.id.im_image);
+        infomationUser = view.findViewById(R.id.infomationUser);
         Button btndangxuat = view.findViewById(R.id.btndangxuat);
 
         btndangxuat.setOnClickListener(new View.OnClickListener() {
@@ -55,7 +58,12 @@ public class Setting_Fragment extends Fragment {
                 startActivity(intent);
             }
         });
-
+        infomationUser.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), Infomation_User.class));
+            }
+        });
 
         Bundle arguments = getArguments();
         if (arguments != null) {
